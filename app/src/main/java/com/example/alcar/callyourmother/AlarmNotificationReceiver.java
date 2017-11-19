@@ -61,7 +61,7 @@ public class AlarmNotificationReceiver extends BroadcastReceiver {
             // Pass the Notification to the NotificationManager:
             mNotificationManager.notify(MY_NOTIFICATION_IDs[type],
                     notificationBuilder.build());
-            AlarmOperation.enableAlert(context,0);
+            AlarmOperation.enableAlert(context,type);
 
 
 
