@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/singleListPriority"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#1998e8">
+
+    <Button
+        android:id="@+id/delete_button"
+        style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/add_button"
+        android:layout_marginRight="5dp"
+        android:background="#87aeed"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="Delete"
+        android:textColor="#f4f4f4"/>
+
+    <Button
+        android:id="@+id/add_button"
+        style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="11dp"
+        android:layout_toStartOf="@+id/delete_button"
+        android:background="#87aeed"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="EDIT"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#f4f4f4"/>
+
+    <EditText
+        android:id="@+id/contactName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/add_button"
+        android:layout_marginEnd="12dp"
+        android:layout_toStartOf="@+id/add_button"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:textAlignment="center"
+        android:textColor="#f4f4f4"/>
+
+</RelativeLayout>
