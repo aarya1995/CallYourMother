@@ -41,7 +41,8 @@ public class MainActivity extends Activity {
 
         /**************** Create Custom Adapter *********/
         adapter=new CustomAdapter( CustomListView, CustomListViewValuesArr,res );
-        list.setAdapter( adapter );
+        list.setAdapter(adapter);
+
     }
 
     /****** Function to set data in ArrayList *************/
