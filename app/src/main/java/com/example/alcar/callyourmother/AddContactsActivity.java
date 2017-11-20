@@ -35,6 +35,8 @@ public class AddContactsActivity extends Activity {
             public void onNothingSelected(AdapterView<?> adapterView) {
             }
         });
+
+        // Clicking button will create an alarm in AlarmOperation.java class
         setButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

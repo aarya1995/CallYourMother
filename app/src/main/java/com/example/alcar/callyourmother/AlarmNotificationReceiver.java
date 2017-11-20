@@ -57,6 +57,7 @@ public class AlarmNotificationReceiver extends BroadcastReceiver {
             // Pass the Notification to the NotificationManager:
             mNotificationManager.notify(MY_NOTIFICATION_IDs[type],
                     notificationBuilder.build());
+            // Once the message get notified, it calls to create another alarm in AlarmOperation.java class
             AlarmOperation.enableAlert(context,type);
 
 

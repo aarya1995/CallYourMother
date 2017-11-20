@@ -17,6 +17,7 @@ public class AlarmOperation {
         PendingIntent mNotificationReceiverPendingIntent = PendingIntent.getBroadcast(
                 context, type, intent, 0);
 
+        // Set alarm starts from current calender date
         Calendar calendar =Calendar.getInstance();
         calendar.set(Calendar.HOUR_OF_DAY, 8);
         calendar.set(Calendar.MINUTE, 0);
