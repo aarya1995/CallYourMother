@@ -14,7 +14,6 @@ import android.widget.Toast;
 import android.widget.Spinner;
 import android.widget.AdapterView.OnItemClickListener;
 
-
 /**
  * Created by jiaxin on 2017/11/15.
  */

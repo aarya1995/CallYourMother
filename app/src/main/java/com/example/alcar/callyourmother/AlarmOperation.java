@@ -19,22 +19,27 @@ public class AlarmOperation {
         intent.setClass(context, AlarmNotificationReceiver.class);
         PendingIntent mNotificationReceiverPendingIntent = PendingIntent.getBroadcast(
                 context, type, intent, 0);
+
         Calendar calendar =Calendar.getInstance();
         calendar.set(Calendar.HOUR_OF_DAY, 8);
         calendar.set(Calendar.MINUTE, 0);
         calendar.set(Calendar.SECOND, 0);
         calendar.set(Calendar.MILLISECOND, 0);
-        if (type==2) {
-            calendar.set(Calendar.DAY_OF_WEEK, 1);
-            if(calendar.getTimeInMillis() < System.currentTimeMillis())
-               calendar.add(Calendar.DAY_OF_YEAR, 7);
+        calendar.set(Calendar.DAY_OF_WEEK,1);
+        if (type == 0) { // low priority
+            if(calendar.getTimeInMillis() < System.currentTimeMillis()) {
+                calendar.add(Calendar.DAY_OF_YEAR, 7*4);
+            }
+        } else if (type == 1) { // median priority
+            if(calendar.getTimeInMillis() < System.currentTimeMillis()) {
+                calendar.add(Calendar.DAY_OF_YEAR, 7*2);
+            }
+        } else { // high priority
+            if(calendar.getTimeInMillis() < System.currentTimeMillis()) {
+                calendar.add(Calendar.DAY_OF_YEAR, 7);
+            }
         }
-        else if (type==1) {
-            calendar.add(Calendar.DAY_OF_YEAR, 14);
-        }
-        else if(type==0){
-            calendar.add(Calendar.DAY_OF_YEAR, 28);
-        }
+
         // Set alarm
         mAlarmManager.set(AlarmManager.RTC, calendar.getTimeInMillis(), mNotificationReceiverPendingIntent);
     }
