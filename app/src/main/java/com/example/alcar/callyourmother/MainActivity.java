@@ -5,17 +5,21 @@ import android.app.Activity;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.zip.Inflater;
 
 
 public class MainActivity extends Activity {
 
     ListView list;
-    CustomAdapter adapter;
+    MyBaseAdapter adapter;
     public  MainActivity CustomListView = null;
     public ArrayList<ListModel> CustomListViewValuesArr = new ArrayList<ListModel>();
     @Override
@@ -32,48 +36,68 @@ public class MainActivity extends Activity {
         });
 
         CustomListView = this;
-
-        /******** Take some data in Arraylist ( CustomListViewValuesArr ) ***********/
         setListData();
-
-        Resources res =getResources();
         list = ( ListView )findViewById( R.id.existingPriority );  // List defined in XML ( See Below )
 
-        /**************** Create Custom Adapter *********/
-        adapter=new CustomAdapter( CustomListView, CustomListViewValuesArr,res );
-        list.setAdapter(adapter);
 
+        adapter=new MyBaseAdapter();
+        list.setAdapter( adapter );
     }
 
-    /****** Function to set data in ArrayList *************/
+
     public void setListData()
     {
-
+        /**need to change i<11 to the actually list in database**/
         for (int i = 0; i < 11; i++) {
 
-            final ListModel sched = new ListModel();
+            final ListModel existingPriorityList = new ListModel();
 
-            /******* Firstly take data in model object ******/
-            sched.setContactName("Contact Name");
+           /**This is just manually adding contact, need to figure out how to get contacts from priority**/
+            existingPriorityList.setContactName("Contact Name"+String.valueOf(i));
 
-            /******** Take Model Object in ArrayList **********/
-            CustomListViewValuesArr.add( sched );
+
+            CustomListViewValuesArr.add(existingPriorityList);
         }
 
     }
 
+    class MyBaseAdapter extends BaseAdapter{
 
-    /*****************  This function used by adapter ****************/
-    public void onItemClick(int mPosition)
-    {
-        ListModel tempValues = ( ListModel ) CustomListViewValuesArr.get(mPosition);
+        public int getCount(){
+            return CustomListViewValuesArr.size();
+        }
+        public Object getItem(int position) {
+            return position;
+        }
 
-
-        // SHOW ALERT
-
-        Toast.makeText(CustomListView,
-                ""+tempValues.getContactName(),
-                Toast.LENGTH_LONG)
-                .show();
+        public long getItemId(int position) {
+            return position;
+        }
+        public View getView(int position, View convertView, ViewGroup parent) {
+            if(convertView == null){
+                convertView=View.inflate(MainActivity.this,R.layout.single_list_priority,null);;
+            }
+            ListModel m = CustomListViewValuesArr.get(position);
+            TextView name = (TextView) convertView.findViewById(R.id.contactName);
+            name.setText(m.getContactName());
+            Button edit = (Button) convertView.findViewById(R.id.edit_button);
+            Button delete = (Button) convertView.findViewById(R.id.delete_button);
+            /**edit button need to be linked to correct function. Here it is just an example**/
+            edit.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View view){
+                    Intent edit_priority = new Intent(MainActivity.this, AddContactsActivity.class);
+                    startActivity(edit_priority);
+                }
+            });
+            /** delete button need to be implemented to have proper function **/
+            delete.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View view){
+                    Intent delete_priority = new Intent(MainActivity.this, null);
+                }
+            });
+            return convertView;
+        }
     }
 }
