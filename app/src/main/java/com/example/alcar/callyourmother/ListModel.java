@@ -10,7 +10,7 @@ public class ListModel {
     public void setContactName(String contactName){
         this.contactName = contactName;
     }
-
+    /**set contact id**/
     public String getContactName(){
         return this.contactName;
     }

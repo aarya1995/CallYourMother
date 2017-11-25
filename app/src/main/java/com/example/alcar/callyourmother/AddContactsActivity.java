@@ -17,7 +17,7 @@ import android.widget.AdapterView.OnItemClickListener;
 /**
  * Created by jiaxin on 2017/11/15.
  */
-
+/**This should be edit_priority**/
 public class AddContactsActivity extends Activity {
     private int type=0;//type of priority, Low:0 Med:1 High:2
     private String []strings={"Low", "Med","High"};
