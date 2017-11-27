@@ -10,6 +10,7 @@
 
     <AutoCompleteTextView
         android:id="@+id/autoContact"
+        style="@style/Widget.AppCompat.AutoCompleteTextView"
         android:layout_width="291dp"
         android:layout_height="43dp"
         android:layout_marginBottom="8dp"
@@ -38,4 +39,5 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/autoContact"
         app:layout_constraintVertical_bias="0.909"/>
+    
 </android.support.constraint.ConstraintLayout>
