@@ -1,9 +1,11 @@
 package com.example.alcar.callyourmother;
 
+import android.Manifest;
 import android.content.Intent;
 import android.app.Activity;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -22,15 +24,18 @@ public class MainActivity extends Activity {
     MyBaseAdapter adapter;
     public  MainActivity CustomListView = null;
     public ArrayList<ListModel> CustomListViewValuesArr = new ArrayList<ListModel>();
+    private final String[] permissions = {"android.permission.READ_CONTACTS"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        requestPermissions(permissions,200);
+
         Button add = findViewById(R.id.addNewContacts);
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this,AddContactsActivity.class);
+                Intent i = new Intent(MainActivity.this, AddNewContactActivity.class);
                 startActivity(i);
             }
         });
