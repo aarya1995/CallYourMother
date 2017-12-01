@@ -16,15 +16,15 @@ import android.media.AudioAttributes;
 import android.net.Uri;
 import android.util.Log;
 
+import java.util.ArrayList;
+
 public class AlarmNotificationReceiver extends BroadcastReceiver {
     // Notification ID to allow for future updates
     private static final int[] MY_NOTIFICATION_IDs ={0,1,2} ;
 
     // Notification Text Elements
-    private final CharSequence[] tickerTexts = {"Low Alarm","Med Alarm","High Alarm"};
-    private final CharSequence[] contentTexts = {"Low","Med","High"};
+    private final CharSequence[] tickerTexts = {"Low Contacts","Med Contacts","High Contacts"};
     private final CharSequence contentTitle = "Call Your Mother";
-
     // Notification Sound and Vibration on Arrival
     private final Uri mSoundURI = Uri
             .parse("android.resource://com.example.alcar.callyourmother/"
@@ -35,9 +35,24 @@ public class AlarmNotificationReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
+        //get contacts name from database
+        SQLiteHelper sQLiteHelper = new SQLiteHelper(context);
+        ArrayList<ContactModel> contacts = sQLiteHelper.getAllRecords();
+        ContactModel contact;
         mContext = context;
         int type = intent.getIntExtra("type",0);
-        String tickerText,contentText;
+        String contentText=new String();
+        for(int i =0;i<contacts.size();i++){
+            contact = contacts.get(i);
+            int t = Integer.parseInt(contact.getPriority());
+            if(t==type){
+                contentText += contact.getFirstName()+" "+contact.getLastName()+";";
+            }
+        }
+        if(contentText.length()==0) {//delete the alarm if no one has the priority
+            AlarmOperation.cancel(context,type);
+            return;
+        }
         createNotificationChannel();
 
         Intent mNotificationIntent = new Intent(context, AddContactsActivity.class)
@@ -52,7 +67,7 @@ public class AlarmNotificationReceiver extends BroadcastReceiver {
                     mContext,mChannelID).setTicker(tickerTexts[type])
                     .setSmallIcon(android.R.drawable.stat_sys_warning)
                     .setAutoCancel(true).setContentTitle(contentTitle)
-                    .setContentText(contentTexts[type]).setContentIntent(mContentIntent);
+                    .setContentText(contentText).setContentIntent(mContentIntent);
 
             // Get the NotificationManager
             NotificationManager mNotificationManager = (NotificationManager) context
