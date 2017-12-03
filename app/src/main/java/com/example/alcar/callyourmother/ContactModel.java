@@ -66,5 +66,12 @@ public class ContactModel {
     public String toString() {
         return this.firstName + " " + this.lastName + " " + this.phoneNumber;
     }
+
+    public boolean equals(ContactModel otherContact) {
+        return this.firstName.equals(otherContact.firstName) &&
+                this.lastName.equals(otherContact.lastName) &&
+                this.phoneNumber.equals(otherContact.phoneNumber) &&
+                this.priority.equals(otherContact.priority);
+    }
 }
 

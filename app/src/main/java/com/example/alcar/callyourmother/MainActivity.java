@@ -13,7 +13,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.util.Log;
-
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import java.util.ArrayList;
 import java.util.zip.Inflater;
 
@@ -98,13 +99,14 @@ public class MainActivity extends Activity {
 
             Log.i(TAG, contact.toString());
 
-            final ListModel existingPriorityList = new ListModel();
-
-           /**This is just manually adding contact, need to figure out how to get contacts from priority**/
-
             CustomListViewValuesArr.add(contact);
         }
 
+    }
+
+    public void deleteContactFromList(ContactModel contact) {
+
+        CustomListViewValuesArr.remove(contact);
     }
 
     class MyBaseAdapter extends BaseAdapter{
@@ -128,7 +130,7 @@ public class MainActivity extends Activity {
             name.setText(m.getFirstName() + " " + m.getLastName());
             Button edit = (Button) convertView.findViewById(R.id.edit_button);
             Button delete = (Button) convertView.findViewById(R.id.delete_button);
-            /**edit button need to be linked to correct function. Here it is just an example**/
+
             edit.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View view){
@@ -145,7 +147,29 @@ public class MainActivity extends Activity {
             delete.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View view){
-                    Intent delete_priority = new Intent(MainActivity.this, null);
+                    AlertDialog.Builder deleteDialogOk = new AlertDialog.Builder(MainActivity.this);
+                    deleteDialogOk.setTitle("Delete Contact?");
+                    deleteDialogOk.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    // delete the contact
+                                    sQLiteHelper.deleteRecord(m);
+
+                                    // remove contact from list view
+                                    deleteContactFromList(m);
+                                    adapter.notifyDataSetChanged();
+
+                                    Log.i(TAG, "SUCCESSFUL DELETE");
+                                }
+                            }
+                    );
+                    deleteDialogOk.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    });
+                    deleteDialogOk.show();
                 }
             });
             return convertView;

@@ -64,7 +64,8 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
     public void deleteRecord(ContactModel contact) {
         database = this.getReadableDatabase();
-        database.delete(TABLE_NAME, COLUMN_ID + " = ?", new String[]{contact.getID()});
+        database.delete(TABLE_NAME, FIRST_NAME + " =? and "
+                + LAST_NAME + " =? ", new String[]{contact.getFirstName(), contact.getLastName()});
         database.close();
     }
 

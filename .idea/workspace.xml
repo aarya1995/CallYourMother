@@ -11,7 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e19b5258-9334-4f6a-90f9-e05b24089c4e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/alcar/callyourmother/AddContactsActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/alcar/callyourmother/AddContactsActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/alcar/callyourmother/ContactModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/alcar/callyourmother/ContactModel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/alcar/callyourmother/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/alcar/callyourmother/MainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/alcar/callyourmother/SQLiteHelper.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/alcar/callyourmother/SQLiteHelper.java" />
     </list>
@@ -53,23 +53,15 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/alcar/callyourmother/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="150" column="31" lean-forward="true" selection-start-line="150" selection-start-column="31" selection-end-line="150" selection-end-column="31" />
+            <state relative-caret-position="114">
+              <caret line="159" column="67" lean-forward="true" selection-start-line="159" selection-start-column="67" selection-end-line="159" selection-end-column="67" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#726#740#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddContactsActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/alcar/callyourmother/AddContactsActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-169">
-              <caret line="60" column="13" lean-forward="false" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#797#811#0" expanded="true" />
+                <element signature="e#5510#6831#0" expanded="true" />
+                <element signature="e#5836#6464#0" expanded="true" />
+                <element signature="e#6463#6464#0" expanded="true" />
+                <element signature="e#6830#6831#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -78,8 +70,30 @@
       <file leaf-file-name="SQLiteHelper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/alcar/callyourmother/SQLiteHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-178">
-              <caret line="59" column="37" lean-forward="false" selection-start-line="59" selection-start-column="37" selection-end-line="59" selection-end-column="37" />
+            <state relative-caret-position="200">
+              <caret line="67" column="96" lean-forward="false" selection-start-line="67" selection-start-column="96" selection-end-line="67" selection-end-column="96" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddContactsActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/alcar/callyourmother/AddContactsActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-139">
+              <caret line="60" column="13" lean-forward="false" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ContactModel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/alcar/callyourmother/ContactModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="260">
+              <caret line="73" column="60" lean-forward="false" selection-start-line="73" selection-start-column="60" selection-end-line="73" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -1829,12 +1843,12 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/add_new_priority.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/list_item.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/alcar/callyourmother/ContactModel.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/edit_priority.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/single_list_priority.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/alcar/callyourmother/AddNewContactActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/alcar/callyourmother/AddContactsActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/alcar/callyourmother/SQLiteHelper.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/alcar/callyourmother/ContactModel.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/alcar/callyourmother/MainActivity.java" />
       </list>
     </option>
@@ -2088,7 +2102,7 @@
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
       <method>
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1512343433765" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1512344858565" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2135,7 +2149,7 @@
         <option name="ADVANCED_PROFILING_ENABLED" value="false" />
       </Profilers>
       <method>
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1512343433765" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1512344858565" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2483,13 +2497,13 @@
           <caret line="38" column="17" lean-forward="false" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#726#740#0" expanded="true" />
-            <element signature="e#1306#1684#0" expanded="true" />
-            <element signature="e#1683#1684#0" expanded="true" />
-            <element signature="e#4811#5471#0" expanded="true" />
-            <element signature="e#5470#5471#0" expanded="true" />
-            <element signature="e#5593#5808#0" expanded="true" />
-            <element signature="e#5807#5808#0" expanded="true" />
+            <element signature="e#797#811#0" expanded="true" />
+            <element signature="e#1377#1755#0" expanded="true" />
+            <element signature="e#1754#1755#0" expanded="true" />
+            <element signature="e#4728#5388#0" expanded="false" />
+            <element signature="e#5387#5388#0" expanded="false" />
+            <element signature="e#5510#6831#0" expanded="true" />
+            <element signature="e#6830#6831#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2511,13 +2525,13 @@
           <caret line="43" column="31" lean-forward="false" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#726#740#0" expanded="true" />
-            <element signature="e#1306#1684#0" expanded="true" />
-            <element signature="e#1683#1684#0" expanded="true" />
-            <element signature="e#4811#5471#0" expanded="true" />
-            <element signature="e#5470#5471#0" expanded="true" />
-            <element signature="e#5593#5808#0" expanded="true" />
-            <element signature="e#5807#5808#0" expanded="true" />
+            <element signature="e#797#811#0" expanded="true" />
+            <element signature="e#1377#1755#0" expanded="true" />
+            <element signature="e#1754#1755#0" expanded="true" />
+            <element signature="e#4728#5388#0" expanded="false" />
+            <element signature="e#5387#5388#0" expanded="false" />
+            <element signature="e#5510#6831#0" expanded="true" />
+            <element signature="e#6830#6831#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2603,13 +2617,13 @@
           <caret line="76" column="5" lean-forward="false" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#726#740#0" expanded="true" />
-            <element signature="e#1306#1684#0" expanded="true" />
-            <element signature="e#1683#1684#0" expanded="true" />
-            <element signature="e#4811#5471#0" expanded="true" />
-            <element signature="e#5470#5471#0" expanded="true" />
-            <element signature="e#5593#5808#0" expanded="true" />
-            <element signature="e#5807#5808#0" expanded="true" />
+            <element signature="e#797#811#0" expanded="true" />
+            <element signature="e#1377#1755#0" expanded="true" />
+            <element signature="e#1754#1755#0" expanded="true" />
+            <element signature="e#4728#5388#0" expanded="false" />
+            <element signature="e#5387#5388#0" expanded="false" />
+            <element signature="e#5510#6831#0" expanded="true" />
+            <element signature="e#6830#6831#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2663,13 +2677,13 @@
           <caret line="76" column="5" lean-forward="false" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#726#740#0" expanded="true" />
-            <element signature="e#1306#1684#0" expanded="true" />
-            <element signature="e#1683#1684#0" expanded="true" />
-            <element signature="e#4811#5471#0" expanded="true" />
-            <element signature="e#5470#5471#0" expanded="true" />
-            <element signature="e#5593#5808#0" expanded="true" />
-            <element signature="e#5807#5808#0" expanded="true" />
+            <element signature="e#797#811#0" expanded="true" />
+            <element signature="e#1377#1755#0" expanded="true" />
+            <element signature="e#1754#1755#0" expanded="true" />
+            <element signature="e#4728#5388#0" expanded="false" />
+            <element signature="e#5387#5388#0" expanded="false" />
+            <element signature="e#5510#6831#0" expanded="true" />
+            <element signature="e#6830#6831#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2707,13 +2721,13 @@
           <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#726#740#0" expanded="true" />
-            <element signature="e#1306#1684#0" expanded="true" />
-            <element signature="e#1683#1684#0" expanded="true" />
-            <element signature="e#4811#5471#0" expanded="true" />
-            <element signature="e#5470#5471#0" expanded="true" />
-            <element signature="e#5593#5808#0" expanded="true" />
-            <element signature="e#5807#5808#0" expanded="true" />
+            <element signature="e#797#811#0" expanded="true" />
+            <element signature="e#1377#1755#0" expanded="true" />
+            <element signature="e#1754#1755#0" expanded="true" />
+            <element signature="e#4728#5388#0" expanded="false" />
+            <element signature="e#5387#5388#0" expanded="false" />
+            <element signature="e#5510#6831#0" expanded="true" />
+            <element signature="e#6830#6831#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2740,14 +2754,6 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mol/callyourmother/MainActivity.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/alcar/callyourmother/CustomAdapter.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/select_existing_priority.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/alcar/callyourmother/ListModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="17" column="1" lean-forward="false" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -2844,14 +2850,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/alcar/callyourmother/ContactModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="66" column="29" lean-forward="false" selection-start-line="66" selection-start-column="20" selection-end-line="66" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/alcar/callyourmother/AddNewContactActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
@@ -2865,15 +2863,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/alcar/callyourmother/SQLiteHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-178">
-          <caret line="59" column="37" lean-forward="false" selection-start-line="59" selection-start-column="37" selection-end-line="59" selection-end-column="37" />
+        <state relative-caret-position="200">
+          <caret line="67" column="96" lean-forward="false" selection-start-line="67" selection-start-column="96" selection-end-line="67" selection-end-column="96" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/alcar/callyourmother/AddContactsActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-169">
+        <state relative-caret-position="-139">
           <caret line="60" column="13" lean-forward="false" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -2881,13 +2879,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/alcar/callyourmother/ListModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="17" column="1" lean-forward="false" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/alcar/callyourmother/ContactModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="73" column="60" lean-forward="false" selection-start-line="73" selection-start-column="60" selection-end-line="73" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/alcar/callyourmother/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="150" column="31" lean-forward="true" selection-start-line="150" selection-start-column="31" selection-end-line="150" selection-end-column="31" />
+        <state relative-caret-position="114">
+          <caret line="159" column="67" lean-forward="true" selection-start-line="159" selection-start-column="67" selection-end-line="159" selection-end-column="67" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#726#740#0" expanded="true" />
+            <element signature="e#797#811#0" expanded="true" />
+            <element signature="e#5510#6831#0" expanded="true" />
+            <element signature="e#5836#6464#0" expanded="true" />
+            <element signature="e#6463#6464#0" expanded="true" />
+            <element signature="e#6830#6831#0" expanded="true" />
           </folding>
         </state>
       </provider>
