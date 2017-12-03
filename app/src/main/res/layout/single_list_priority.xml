@@ -10,14 +10,14 @@
         style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="5dp"
+        android:layout_alignBottom="@+id/edit_button"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@+id/edit_button"
         android:background="#87aeed"
         android:fontFamily="sans-serif-smallcaps"
         android:text="Delete"
-        android:textColor="#f4f4f4"
-        android:layout_alignBaseline="@+id/addNewContacts"
-        android:layout_alignBottom="@+id/addNewContacts"
-        android:layout_alignParentEnd="true" />
+        android:textColor="#f4f4f4" />
 
     <Button
         android:id="@+id/edit_button"
@@ -35,17 +35,17 @@
         android:textAllCaps="false"
         android:textColor="#f4f4f4" />
 
-    <EditText
+    <TextView
         android:id="@+id/contactName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="17dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
-        android:textAlignment="center"
-        android:textColor="#f4f4f4"
-        android:layout_alignBottom="@+id/addNewContacts"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="11dp" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
 </RelativeLayout>

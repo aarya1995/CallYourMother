@@ -13,7 +13,10 @@ import android.widget.Button;
 import android.widget.Toast;
 import android.widget.Spinner;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
+
+import org.w3c.dom.Text;
 
 /**
  * Created by jiaxin on 2017/11/15.
@@ -32,9 +35,18 @@ public class AddContactsActivity extends Activity {
 
         Button setButton = findViewById(R.id.set);
         Spinner sp = (Spinner) findViewById(R.id.selectPriority);
-        final EditText firstName = (EditText) findViewById(R.id.firstName);
-        final EditText lastName = (EditText) findViewById(R.id.lastName);
-        final EditText phoneNumber = (EditText) findViewById(R.id.phoneNumber);
+        final TextView firstName = (TextView) findViewById(R.id.firstName);
+        final TextView lastName = (TextView) findViewById(R.id.lastName);
+        final TextView phoneNumber = (TextView) findViewById(R.id.phoneNumber);
+
+        // assign the text views with proper values
+        Intent i = getIntent();
+
+        if (i.getStringExtra("OperationType").equals("Insert")) {
+            firstName.setText(i.getStringExtra("firstName"));
+            lastName.setText(i.getStringExtra("lastName"));
+            phoneNumber.setText(i.getStringExtra("number"));
+        }
 
         sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

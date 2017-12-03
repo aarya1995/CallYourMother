@@ -14,6 +14,13 @@ public class ContactModel {
         this.priority = priority;
     }
 
+    public ContactModel(String firstName, String lastName, String phoneNumber) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+        this.priority = null;
+    }
+
     public ContactModel() {}
 
     public String getID() {
@@ -57,7 +64,7 @@ public class ContactModel {
     }
 
     public String toString() {
-        return this.firstName + " " + this.lastName;
+        return this.firstName + " " + this.lastName + " " + this.phoneNumber;
     }
 }
 

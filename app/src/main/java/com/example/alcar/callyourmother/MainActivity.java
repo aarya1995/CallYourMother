@@ -26,20 +26,24 @@ public class MainActivity extends Activity {
     public ArrayList<ContactModel> CustomListViewValuesArr = new ArrayList<ContactModel>();
     SQLiteHelper sQLiteHelper;
     public static final String TAG = "Abhas";
+    private final String[] permissions = {"android.permission.READ_CONTACTS"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        requestPermissions(permissions,200);
+
         sQLiteHelper = new SQLiteHelper(MainActivity.this); // create db
         Button add = findViewById(R.id.addNewContacts);
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this,AddContactsActivity.class);
+
+                Intent i = new Intent(MainActivity.this, AddNewContactActivity.class);
                 // will be used to differentiate between Insert & Edit
                 i.putExtra("OperationType", "Insert");
-                startActivityForResult(i, 1);
+                startActivityForResult(i,1);
             }
         });
 
@@ -61,14 +65,18 @@ public class MainActivity extends Activity {
             String priority = data.getStringExtra("priority");
 
             ContactModel contact = new ContactModel(fName, lName, phoneNumber, priority);
+            Log.i("Attempting to insert: ", contact.toString());
+            Log.i("Request Code: ", Integer.toString(requestCode));
 
             if (requestCode == 1) { // Insert
+                Log.i(TAG, "SUCCESS!");
                 sQLiteHelper.insertRecord(contact);
             }
 
             setListData(); // refresh list view
             // list.setAdapter(adapter); // re-inflation
             adapter.notifyDataSetChanged();
+            Log.i(TAG, "Insertion went smoothly");
         }
     }
 
@@ -109,7 +117,7 @@ public class MainActivity extends Activity {
             if(convertView == null){
                 convertView=View.inflate(MainActivity.this,R.layout.single_list_priority,null);;
             }
-            ContactModel m = CustomListViewValuesArr.get(position);
+            final ContactModel m = CustomListViewValuesArr.get(position);
             TextView name = (TextView) convertView.findViewById(R.id.contactName);
             name.setText(m.getFirstName() + " " + m.getLastName());
             Button edit = (Button) convertView.findViewById(R.id.edit_button);
@@ -119,7 +127,11 @@ public class MainActivity extends Activity {
                 @Override
                 public void onClick(View view){
                     Intent edit_priority = new Intent(MainActivity.this, AddContactsActivity.class);
-                    startActivity(edit_priority);
+                    edit_priority.putExtra("OperationType", "Edit");
+                    edit_priority.putExtra("firstName", m.getFirstName());
+                    edit_priority.putExtra("lastName", m.getLastName());
+                    edit_priority.putExtra("number", currContact.getPhoneNumber());
+                    startActivityForResult(edit_priority, 2);
                 }
             });
             /** delete button need to be implemented to have proper function **/
