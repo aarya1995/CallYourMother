@@ -56,7 +56,9 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         contentValues.put(LAST_NAME, contact.getLastName());
         contentValues.put(PHONE_NUMBER, contact.getPhoneNumber());
         contentValues.put(PRIORITY, contact.getPriority());
-        database.update(TABLE_NAME, contentValues, COLUMN_ID + " = ?", new String[]{contact.getID()});
+        // primary key formed by first name and last name for now
+        database.update(TABLE_NAME, contentValues, FIRST_NAME + " =? and "
+                + LAST_NAME + " =? ", new String[] {contact.getFirstName(), contact.getLastName()});
         database.close();
     }
 

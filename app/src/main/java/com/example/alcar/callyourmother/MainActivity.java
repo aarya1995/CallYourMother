@@ -27,6 +27,7 @@ public class MainActivity extends Activity {
     SQLiteHelper sQLiteHelper;
     public static final String TAG = "Abhas";
     private final String[] permissions = {"android.permission.READ_CONTACTS"};
+    // private String rowID = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,18 +66,23 @@ public class MainActivity extends Activity {
             String priority = data.getStringExtra("priority");
 
             ContactModel contact = new ContactModel(fName, lName, phoneNumber, priority);
-            Log.i("Attempting to insert: ", contact.toString());
             Log.i("Request Code: ", Integer.toString(requestCode));
 
             if (requestCode == 1) { // Insert
-                Log.i(TAG, "SUCCESS!");
+                Log.i("Attempting to insert: ", contact.toString());
                 sQLiteHelper.insertRecord(contact);
+                Log.i(TAG, "SUCCESSFUL INSERT!");
+            } else if (requestCode == 2) {
+                Log.i("Attempting to update: ", contact.toString());
+                sQLiteHelper.updateRecord(contact);
+                Log.i(TAG, "SUCCESSFUL EDIT!");
+
             }
 
             setListData(); // refresh list view
             // list.setAdapter(adapter); // re-inflation
             adapter.notifyDataSetChanged();
-            Log.i(TAG, "Insertion went smoothly");
+            Log.i(TAG, "Database operation went smoothly");
         }
     }
 
@@ -130,7 +136,8 @@ public class MainActivity extends Activity {
                     edit_priority.putExtra("OperationType", "Edit");
                     edit_priority.putExtra("firstName", m.getFirstName());
                     edit_priority.putExtra("lastName", m.getLastName());
-                    edit_priority.putExtra("number", currContact.getPhoneNumber());
+                    edit_priority.putExtra("number", m.getPhoneNumber());
+                    edit_priority.putExtra("priority", m.getPriority());
                     startActivityForResult(edit_priority, 2);
                 }
             });

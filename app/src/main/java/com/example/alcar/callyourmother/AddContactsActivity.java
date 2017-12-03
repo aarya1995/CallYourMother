@@ -46,6 +46,12 @@ public class AddContactsActivity extends Activity {
             firstName.setText(i.getStringExtra("firstName"));
             lastName.setText(i.getStringExtra("lastName"));
             phoneNumber.setText(i.getStringExtra("number"));
+        } else if (i.getStringExtra("OperationType").equals("Edit")) {
+            firstName.setText(i.getStringExtra("firstName"));
+            lastName.setText(i.getStringExtra("lastName"));
+            phoneNumber.setText(i.getStringExtra("number"));
+            sp.setSelection(Integer.parseInt(i.getStringExtra("priority")));
+            Log.i("setting priority: ", i.getStringExtra("priority"));
         }
 
         sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
