@@ -66,6 +66,7 @@ public class AddNewContactActivity extends Activity {
                 if (nameArr.length > 1) {
                     lastName = nameArr[1];
                 }
+
                 String number = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
                 ContactModel contact = new ContactModel(firstName, lastName, number);
 
