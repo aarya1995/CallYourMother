@@ -80,7 +80,7 @@ public class MainActivity extends Activity {
 
             }
 
-            setListData(); // refresh list view
+            setListData(); // refresh data for list view
             // list.setAdapter(adapter); // re-inflation
             adapter.notifyDataSetChanged();
             Log.i(TAG, "Database operation went smoothly");
@@ -90,6 +90,9 @@ public class MainActivity extends Activity {
 
     public void setListData()
     {
+        // start from scratch with empty list
+        CustomListViewValuesArr = new ArrayList<ContactModel>();
+
         ArrayList<ContactModel> contacts = sQLiteHelper.getAllRecords();
         ContactModel contact;
 
