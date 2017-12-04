@@ -61,7 +61,11 @@ public class AddNewContactActivity extends Activity {
             if (!nameToContact.containsKey(name)) {
                 String[] nameArr = name.split(" ");
                 String firstName = nameArr[0];
-                String lastName = nameArr[1];
+                String lastName = "";
+
+                if (nameArr.length > 1) {
+                    lastName = nameArr[1];
+                }
                 String number = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
                 ContactModel contact = new ContactModel(firstName, lastName, number);
 
