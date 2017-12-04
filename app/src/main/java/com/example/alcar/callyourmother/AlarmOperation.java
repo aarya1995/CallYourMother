@@ -18,7 +18,7 @@ public class AlarmOperation {
                 context, type, intent, 0);
 
         Calendar calendar =Calendar.getInstance();
-        calendar.set(Calendar.HOUR_OF_DAY, 8);
+        calendar.set(Calendar.HOUR_OF_DAY, 8); //always notifies at 8am
         calendar.set(Calendar.MINUTE, 0);
         calendar.set(Calendar.SECOND, 0);
         calendar.set(Calendar.MILLISECOND, 0);
@@ -40,6 +40,8 @@ public class AlarmOperation {
         // Set alarm
         mAlarmManager.set(AlarmManager.RTC, calendar.getTimeInMillis(), mNotificationReceiverPendingIntent);
     }
+
+    //no need to call this method
     public static void cancel(Context context,int type){
         AlarmManager mAlarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent();

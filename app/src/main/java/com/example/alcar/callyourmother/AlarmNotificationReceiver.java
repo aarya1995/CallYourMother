@@ -40,11 +40,12 @@ public class AlarmNotificationReceiver extends BroadcastReceiver {
         mContext = context;
         int type = intent.getIntExtra("type",0);
         String contentText=new String();
+        contentText = "Remember to call:";
         for(int i =0;i<contacts.size();i++){
             contact = contacts.get(i);
             int t = Integer.parseInt(contact.getPriority());
             if(t==type){
-                contentText += contact.getFirstName()+" "+contact.getLastName()+";";
+                contentText += "  " + contact.getFirstName()+" "+contact.getLastName()+";";
             }
         }
         if(contentText.length()==0) {//delete the alarm if no one has the priority
@@ -59,7 +60,6 @@ public class AlarmNotificationReceiver extends BroadcastReceiver {
                 mNotificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         // Build the Notification
-
         Notification.Builder notificationBuilder = new Notification.Builder(
                 mContext,mChannelID).setTicker(tickerTexts[type])
                 .setSmallIcon(android.R.drawable.stat_sys_warning)
@@ -74,9 +74,6 @@ public class AlarmNotificationReceiver extends BroadcastReceiver {
         mNotificationManager.notify(MY_NOTIFICATION_IDs[type],
                 notificationBuilder.build());
         AlarmOperation.enableAlert(context,type);
-
-
-
     }
 
     private void createNotificationChannel() {
