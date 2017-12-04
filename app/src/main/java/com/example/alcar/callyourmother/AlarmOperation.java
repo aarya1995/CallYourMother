@@ -7,6 +7,9 @@ import android.content.Intent;
 
 import java.util.Calendar;
 
+/**
+ * Created by Jiaxin on 2017/11/16.
+ */
 
 public class AlarmOperation {
     public static void enableAlert(Context context, int type){
@@ -17,7 +20,6 @@ public class AlarmOperation {
         PendingIntent mNotificationReceiverPendingIntent = PendingIntent.getBroadcast(
                 context, type, intent, 0);
 
-        // Set alarm starts from current calender date
         Calendar calendar =Calendar.getInstance();
         calendar.set(Calendar.HOUR_OF_DAY, 8);
         calendar.set(Calendar.MINUTE, 0);
@@ -40,5 +42,14 @@ public class AlarmOperation {
 
         // Set alarm
         mAlarmManager.set(AlarmManager.RTC, calendar.getTimeInMillis(), mNotificationReceiverPendingIntent);
+    }
+    public static void cancel(Context context,int type){
+        AlarmManager mAlarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+        Intent intent = new Intent();
+        intent.putExtra("type", type);
+        intent.setClass(context, AlarmNotificationReceiver.class);
+        PendingIntent mNotificationReceiverPendingIntent = PendingIntent.getBroadcast(
+                context, type, intent, 0);
+        mAlarmManager.cancel(mNotificationReceiverPendingIntent);
     }
 }
