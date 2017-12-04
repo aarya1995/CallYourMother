@@ -7,9 +7,6 @@ import android.content.Context;
 import android.content.ContentValues;
 import java.util.ArrayList;
 
-/**
- * Created by abhasarya on 11/22/17.
- */
 
 public class SQLiteHelper extends SQLiteOpenHelper {
     public static final int DATABASE_VERSION = 1;

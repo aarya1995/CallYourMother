@@ -7,9 +7,6 @@ import android.content.Intent;
 
 import java.util.Calendar;
 
-/**
- * Created by Jiaxin on 2017/11/16.
- */
 
 public class AlarmOperation {
     public static void enableAlert(Context context, int type){

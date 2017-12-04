@@ -1,8 +1,6 @@
 package com.example.alcar.callyourmother;
 
-/**
- * Created by abhasarya on 11/22/17.
- */
+
 
 public class ContactModel {
     private String ID, firstName, lastName, phoneNumber, priority;
