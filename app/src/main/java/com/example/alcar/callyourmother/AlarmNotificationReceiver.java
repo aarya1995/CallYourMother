@@ -46,7 +46,7 @@ public class AlarmNotificationReceiver extends BroadcastReceiver {
             }
         }
         if(contentText.length()==0) {//delete the alarm if no one has the priority
-            AlarmOperation.cancel(context,type);
+            //AlarmOperation.cancel(context,type);
             return;
         }
         createNotificationChannel();
