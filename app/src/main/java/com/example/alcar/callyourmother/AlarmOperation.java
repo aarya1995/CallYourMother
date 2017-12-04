@@ -43,4 +43,13 @@ public class AlarmOperation {
         // Set alarm
         mAlarmManager.set(AlarmManager.RTC, calendar.getTimeInMillis(), mNotificationReceiverPendingIntent);
     }
+    public static void cancel(Context context,int type){
+        AlarmManager mAlarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+        Intent intent = new Intent();
+        intent.putExtra("type", type);
+        intent.setClass(context, AlarmNotificationReceiver.class);
+        PendingIntent mNotificationReceiverPendingIntent = PendingIntent.getBroadcast(
+                context, type, intent, 0);
+        mAlarmManager.cancel(mNotificationReceiverPendingIntent);
+    }
 }
