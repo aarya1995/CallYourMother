@@ -53,7 +53,7 @@ public class AlarmNotificationReceiver extends BroadcastReceiver {
         }
         createNotificationChannel();
 
-        Intent mNotificationIntent = new Intent(context, AddContactsActivity.class)
+        Intent mNotificationIntent = new Intent(context, MainActivity.class)
                 .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
         PendingIntent mContentIntent = PendingIntent.getActivity(context, 0,
